@@ -1,83 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deportes Unca</title>
-    <!--Definir CSS en un archivo externo-->
-        <link rel="stylesheet=" href="../css/estilos.css">
 
-        <!--Inlcuir CSS en el mismo documento HTML (CSS interna)-->
-        <style>
-            body {background-image:url("../imagenes/love.jpg")}
-        </style>
+    <!-- Vinculamos Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Vinculamos el archivo CSS -->
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
     <header>
+        <img src="../imagenes/uncalogo.png" width="150"/>
         <h1>Deportes UNCA</h1>
-        <!--Incluir CSS en los elementos HTML-->
-        <h2 style="color:deeppink; margin-left:20px">Actividades deportivas</h2>
-       <p>Plataforma de actividades deportivas</p>
+        <p>Plataforma de actividades deportivas</p>
     </header>
+
+    <!-- Menú de navegación -->
     <nav>
         <ul>
             <li><a href="pagina1.html">Inicio</a></li>
             <li><a href="#">Registrarse</a></li>
-            <li><a href="actividades">Actividades deportivas</a></li>
+            <li><a href="pagina1.html#actividades">Actividades deportivas</a></li>
             <li><a href="pagina2.html">Inscribirse a una actividad</a></li>
             <li><a href="inscripciones.html">Mis inscripciones</a></li>
             <li><a href="#">Cancelar inscripción</a></li>
             <li><a href="#">Iniciar sesión</a></li>
         </ul>
     </nav>
-    <section id="actividades">
-        <h2>Actividades deportivas</h2>
 
-        <article>
-            <h3>Fútbol</h3>
-            <p>
-                Prácticas de fútbol recreativo y competitivo para representar a la universidad.
-            </p>
-            <p><strong>Lugar:</strong> Cancha principal de la UNCA.</p>
-            <p><strong>Dias y horarios:</strong> Lunes y jueves de 20:00 a 22:00.</p>
-            <p><strong>Cupos disponibles:</strong> 15.</p>
+    <!-- Contenedor principal del sitio -->
+    <main class="container mt-2">
 
-            <a href="pagina2.html">Inscribirse a esta actividad</a>
-        </article>
-        <article>
-            <h3>Básquet</h3>
-            <p>
-               Entrenamiento de técnicas de lanzamiento, tácticas de juego y partidos amistosos.
-            </p>
-            <p><strong>Lugar:</strong> Cancha techada de la UNCA.</p>
-            <p><strong>Dias y horarios:</strong> Martes y Jueves de 18:00 a 20:00.</p>
-            <p><strong>Cupos disponibles:</strong> 20.</p>
+        <!-- Título Principal-->
+        <div class="ficha mb-4">
+            <h2 class="ficha-header m-0 text-center" style="font-size: 1.1em; letter-spacing: 1px;">
+                ACTIVIDADES DEPORTIVAS DISPONIBLES
+            </h2>
+        </div>
 
-            <a href="pagina2.html">Inscribirse a esta actividad</a>
-        </article>
-        <article>
-            <h3>Voley</h3>
-            <p>
-              Espacio de entrenamiento mixto para aprender fundamentos y juego en equipo.
-            </p>
-            <p><strong>Lugar:</strong> Cancha techada de la UNCA.</p>
-            <p><strong>Dias y horarios:</strong> Miercoles y Viernes de 20:00 a 22:00.</p>
-            <p><strong>Cupos disponibles:</strong> 30.</p>
+        <!-- Contenedor de actividades -->
+        <div class="row" id="actividades">
 
-            <a href="pagina2.html">Inscribirse a esta actividad</a>
-        </article>
-        <article>
-            <h3>Atletismo</h3>
-            <p>
-                Preparación física integral enfocada en velocidad, resistencia y saltos en pista.
-            </p>
-            <p><strong>Lugar:</strong> Cancha principal de la UNCA.</p>
-            <p><strong>Dias y horarios:</strong> Lunes, miercoles y viernes de 19:00 a 21:00.</p>
-            <p><strong>Cupos disponibles:</strong> 13.</p>
+            <!-- Actividad 1: Fútbol -->
+            <div class="col-12 mb-4">
+                <!-- Usamos clases de Bootstrap para crear el "cuadro separado" -->
+                <article class="actividad p-4 bg-white border rounded shadow-sm">
+                    <h3 class="text-primary-unca mb-3">Fútbol</h3>
+                    <p class="text-muted">
+                        Prácticas de fútbol recreativo y competitivo para representar a la universidad.
+                    </p>
+                    <div class="detalles-actividad my-3">
+                        <p class="mb-1"><strong>Lugar:</strong> Cancha principal de la UNCA.</p>
+                        <p class="mb-1"><strong>Días y horarios:</strong> Lunes y jueves de 20:00 a 22:00.</p>
+                        <p class="mb-0"><strong>Cupos disponibles:</strong> 15.</p>
+                    </div>
+                    <!-- Botón de inscripción -->
+                    <div class="mt-3">
+                        <a href="pagina2.html" class="btn-inscripcion">Inscribirse a esta actividad</a>
+                    </div>
+                </article>
+            </div>
 
-            <a href="pagina2.html">Inscribirse a esta actividad</a>
-        </article>
-    </section>
-    <br> <hr>
+            <!-- Actividad 2: Básquet -->
+            <div class="col-12 mb-4">
+                <article class="actividad p-4 bg-white border rounded shadow-sm">
+                    <h3 class="text-primary-unca mb-3">Básquet</h3>
+                    <p class="text-muted">
+                       Entrenamiento de técnicas de lanzamiento, tácticas de juego y partidos amistosos.
+                    </p>
+                    <div class="detalles-actividad my-3">
+                        <p class="mb-1"><strong>Lugar:</strong> Cancha techada de la UNCA.</p>
+                        <p class="mb-1"><strong>Días y horarios:</strong> Martes y Jueves de 18:00 a 20:00.</p>
+                        <p class="mb-0"><strong>Cupos disponibles:</strong> 20.</p>
+                    </div>
+                    <div class="mt-3">
+                        <a href="pagina2.html" class="btn-inscripcion">Inscribirse a esta actividad</a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Actividad 3: Voley -->
+            <div class="col-12 mb-4">
+                <article class="actividad p-4 bg-white border rounded shadow-sm">
+                    <h3 class="text-primary-unca mb-3">Voley</h3>
+                    <p class="text-muted">
+                      Espacio de entrenamiento mixto para aprender fundamentos y juego en equipo.
+                    </p>
+                    <div class="detalles-actividad my-3">
+                        <p class="mb-1"><strong>Lugar:</strong> Cancha techada de la UNCA.</p>
+                        <p class="mb-1"><strong>Días y horarios:</strong> Miércoles y Viernes de 20:00 a 22:00.</p>
+                        <p class="mb-0"><strong>Cupos disponibles:</strong> 30.</p>
+                    </div>
+                    <div class="mt-3">
+                        <a href="pagina2.html" class="btn-inscripcion">Inscribirse a esta actividad</a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Actividad 4: Atletismo -->
+            <div class="col-12 mb-4">
+                <article class="actividad p-4 bg-white border rounded shadow-sm">
+                    <h3 class="text-primary-unca mb-3">Atletismo</h3>
+                    <p class="text-muted">
+                        Preparación física integral enfocada en velocidad, resistencia y saltos en pista.
+                    </p>
+                    <div class="detalles-actividad my-3">
+                        <p class="mb-1"><strong>Lugar:</strong> Cancha principal de la UNCA.</p>
+                        <p class="mb-1"><strong>Días y horarios:</strong> Lunes, miércoles y viernes de 19:00 a 21:00.</p>
+                        <p class="mb-0"><strong>Cupos disponibles:</strong> 13.</p>
+                    </div>
+                    <div class="mt-3">
+                        <a href="pagina2.html" class="btn-inscripcion">Inscribirse a esta actividad</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
     <footer>
         <p>Deportes Unca - 2026</p>
     </footer>
