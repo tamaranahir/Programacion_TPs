@@ -87,6 +87,10 @@ main {
 .ficha-detalles p {
     margin: 5px;
 }
+/* Selector de identificador (#id) */
+#actividades {
+    padding-top: 0px;
+}
 
 /* FORMULARIO */
 form {
