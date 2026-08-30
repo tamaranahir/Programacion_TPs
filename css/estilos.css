@@ -181,6 +181,8 @@ legend {
 /* Botón de Aceptar */
 .btn-aceptar {
     background-color: #3d6f86;
+    padding: 10px;
+    border-radius: 5px;
     color: white;
 }
 .btn-aceptar:hover {
