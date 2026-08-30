@@ -180,6 +180,7 @@ legend {
 }
 /* Botón de Aceptar */
 .btn-aceptar {
+    text-decoration: none;
     background-color: #3d6f86;
     padding: 10px;
     border-radius: 5px;
