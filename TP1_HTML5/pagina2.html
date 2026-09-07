@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscripción a una actividad</title>
+</head>
+<body>
+
+    <h1>Inscripción a una actividad deportiva</h1>
+
+    <form action="inscripciones.html" method="post">
+
+        <fieldset>
+            <legend>Información de la actividad</legend>
+
+            <label for="actividad">Actividad:</label>
+            <input type="text" id="actividad" name="actividad" value="Fútbol" disabled>
+            <br>
+            <label for="lugar">Lugar:</label>
+            <input type="text" id="lugar" name="lugar" value="Cancha principal de la UNCA" disabled>
+            <br>
+            <label for="dia">Día:</label>
+            <input type="text" id="dia" name="dia" value="Lunes y jueves" disabled>
+            <br>
+            <label for="horario">Horario:</label>
+            <input type="text" id="horario" name="horario" value="20:00 a 22:00" disabled>
+        </fieldset>
+
+        <fieldset>
+            <legend>Datos del participante</legend>
+
+            <label for="nombre">Apellido y nombre:</label>
+            <input type="text" id="nombre" name="nombre" maxlength="100" required>
+            <br>
+
+            <label for="dni">DNI:</label>
+            <input type="number" id="dni" name="dni" min="10000000" max="99999999" required>
+            <br>
+
+            <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
+            <br>
+
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" name="correo">
+            <br>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono">
+            <br>
+
+            <label>Sexo:</label>
+
+            <input type="radio" id="sexo_m" name="sexo" value="Masculino">
+            <label for="sexo_m">Masculino</label>
+
+            <input type="radio" id="sexo_f" name="sexo" value="Femenino">
+            <label for="sexo_f">Femenino</label>
+
+            <input type="radio" id="sexo_nb" name="sexo" value="No binario">
+            <label for="sexo_nb">No binario</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Información deportiva</legend>
+
+            <label for="nivel">Nivel:</label>
+            <select id="nivel" name="nivel_deportivo">
+                <option value="inicial">Inicial</option>
+                <option value="intermedio">Intermedio</option>
+                <option value="avanzado">Avanzado</option>
+            </select>
+
+            <br>
+            <label>¿Posee experiencia previa?:</label>
+
+            <input type="radio" id="experiencia_si" name="experiencia" value="Si" required>
+            <label for="experiencia_si">Sí</label>
+
+            <input type="radio" id="experiencia_no" name="experiencia" value="No">
+            <label for="experiencia_no">No</label>
+
+            <br>
+            <label for="observaciones">Observaciones:</label>
+
+            <br>
+            <textarea id="observaciones" name="observaciones"
+                      rows="4" cols="50"></textarea>
+        </fieldset>
+
+        <input type="checkbox" id="condiciones" name="acepta_condiciones" required>
+        <label for="condiciones">Acepto las condiciones de inscripción</label>
+
+        <br>
+        <button type="submit">Aceptar</button>
+        <button type="reset">Cancelar</button>
+    </form>
+</body>
+</html>
