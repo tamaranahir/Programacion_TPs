@@ -1,0 +1,67 @@
+
+from reservas.models import ActividadDeportiva, Horario, Inscripcion
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Crear y guardar al menos tres actividades deportivas.
+    act1 = ActividadDeportiva.objects.create(nombre="Fútbol", descripcion="Fútbol 11 masculino y femenino", lugar="Cancha principal UNCA", cupo=22)
+    act2 = ActividadDeportiva.objects.create(nombre="Básquet",descripcion="Entrenamiento y partidos", lugar="Cancha techada UNCA", cupo=15)
+    act3 = ActividadDeportiva.objects.create(nombre="Vóley", descripcion="Vóley mixto", lugar="Cancha techada UNCA", cupo=18)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Crear y guardar al menos dos horarios para una de las actividades deportivas.
+    h1 = Horario.objects.create(actividad=act1, dia="Lunes", hora_inicio="18:00:00", hora_fin="20:00:00")
+    h2 = Horario.objects.create(actividad=act1, dia="Miércoles", hora_inicio="20:00:00", hora_fin="22:00:00")
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3. Crear y guardar al menos tres inscripciones asociadas a los horarios disponibles.
+    ins1 = Inscripcion.objects.create(nombre="Tamara", apellido="Leiva", dni="41234567", horario=h1, estado="Activa")
+    ins2 = Inscripcion.objects.create(nombre="Sofia", apellido="Contrera", dni="40111222", horario=h1, estado="Cancelada")
+    ins3 = Inscripcion.objects.create(nombre="Valentina", apellido="Robledo", dni="39888777", horario=h2, estado="Activa")
+
+#Verificación
+>>> Inscripcion.objects.all()
+<QuerySet [<Inscripcion: Leiva, Tamara - Fútbol (Activa)>, <Inscripcion: Contrera, Sofia - Fútbol (Cancelada)>, <Inscripcion: Robledo, Valentina - Fútbol (Activa)>]>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4. Consultar y mostrar todas las actividades deportivas registradas.
+    ActividadDeportiva.objects.all()
+
+    #Verificación
+    <QuerySet [<ActividadDeportiva: Fútbol>, <ActividadDeportiva: Básquet>, <ActividadDeportiva: Vóley>]>
+------------------------------------------------------------------------------------------------------------------------
+5. Consultar y mostrar los horarios correspondientes a una actividad deportiva determinada
+    act1.horarios.all()
+
+    #Verificación de los horarios de Fútbol:
+    <QuerySet [<Horario: Fútbol - Lunes (18:00:00 a 20:00:00)>, <Horario: Fútbol - Miércoles (20:00:00 a 22:00:00)>]>
+------------------------------------------------------------------------------------------------------------------------
+6. Filtrar y mostrar las inscripciones que se encuentren en estado Activa.
+    Inscripcion.objects.filter(estado="Activa")
+
+    #Verificación
+    <QuerySet [<Inscripcion: Leiva, Tamara - Fútbol (Activa)>, <Inscripcion: Robledo, Valentina - Fútbol (Activa)>]>
+------------------------------------------------------------------------------------------------------------------------
+7. Consultar las inscripciones correspondientes a un horario determinado.
+    h1.inscripciones.all()
+
+    #Verificación
+    <QuerySet [<Inscripcion: Leiva, Tamara - Fútbol (Activa)>, <Inscripcion: Contrera, Sofia - Fútbol (Cancelada)>]>
+------------------------------------------------------------------------------------------------------------------------
+8. Modificar el cupo de una actividad deportiva.
+    act2.cupo = 30
+    act2.save()
+
+    #Verificación
+    ActividadDeportiva.objects.get(nombre="Básquet").cupo
+    30
+------------------------------------------------------------------------------------------------------------------------
+9. Cambiar el estado de una inscripción de Activa a Cancelada.
+    ins3.estado = "Cancelada"
+    ins3.save()
+
+    #Verificación
+    Inscripcion.objects.get(dni="39888777").estado
+    'Cancelada'
+------------------------------------------------------------------------------------------------------------------------
+10. Eliminar una inscripción de la base de datos.
+    ins3.delete()
+
+    #Verificación
+    <QuerySet [<Inscripcion: Leiva, Tamara - Fútbol (Activa)>, <Inscripcion: Contrera, Sofia - Fútbol (Cancelada)>]>
+    exit()
